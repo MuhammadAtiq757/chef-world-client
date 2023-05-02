@@ -9,6 +9,8 @@ import {
 import Main from './compenents/Layout/Main.jsx';
 import Home from './compenents/Home/Home.jsx';
 import Login from './compenents/Login/Login.jsx';
+import Signup from './compenents/Signup/Signup.jsx';
+import Blog from './compenents/Blog/Blog.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,10 +31,14 @@ element: <Home></Home>
 
       },
 
-      // {
-      //   path: "signup",
-      //   element: <SignUp></SignUp>
-      // }
+     {
+      path: "signup",
+      element:<Signup></Signup>
+     },
+     {
+      path:"blog",
+      element:<Blog></Blog>
+     }
     ]
   },
 ]);
