@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Chefs from '../chefs/Chefs';
-import Footer from '../footer/footer';
-import { Outlet } from 'react-router-dom';
+import Popular from '../popular/Popular';
+
 
 const Home = () => {
-    return (
+
+   return (
         
         <div className='container m-8'>
+          
+          
            
            <div className="card lg:card-side bg-base-100 shadow-xl">
   <figure><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/chef-cooking-channel-youtube-banner-design-template-34ca10abd27afc282c16b6d2864cff25_screen.jpg?ts=1665921135" alt="Album"/></figure>
@@ -21,6 +24,7 @@ const Home = () => {
   </div>
 </div> 
 <Chefs></Chefs>
+<Popular></Popular>
 
         </div>
     );

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
@@ -8,7 +8,7 @@ const Login = () => {
   const auth = getAuth(app)
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
-
+const navigate = useNavigate()
   const handleGoogleSignIn = () =>{
     
 signInWithPopup(auth, googleProvider)
@@ -56,6 +56,7 @@ signIn(email, password)
   const loggedUser = result.user;
   console.log(loggedUser);
   form.rest();
+  navigate('/')
 })
 .catch(error =>{
   console.log(error);
