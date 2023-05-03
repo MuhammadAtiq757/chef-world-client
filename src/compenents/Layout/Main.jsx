@@ -8,7 +8,10 @@ const Main = () => {
     return (
         <div>
             <Hader></Hader>
+     
+
             <Outlet></Outlet>
+            
         </div>
     );
 };

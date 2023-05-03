@@ -31,6 +31,7 @@ fetch('http://localhost:5000/chef')
     <p>Experience: {che.years_of_experience}</p>
    <p>{che.ratings}</p>
    <p>Likes: {che.likes}</p>
+   <button className='btn btn-primary'>Details</button>
   </div>
 </div>
           </div>

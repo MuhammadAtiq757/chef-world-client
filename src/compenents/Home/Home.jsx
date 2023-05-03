@@ -1,5 +1,7 @@
 import React from 'react';
 import Chefs from '../chefs/Chefs';
+import Footer from '../footer/footer';
+import { Outlet } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -19,6 +21,7 @@ const Home = () => {
   </div>
 </div> 
 <Chefs></Chefs>
+
         </div>
     );
 };

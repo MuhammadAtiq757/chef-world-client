@@ -84,7 +84,7 @@ signIn(email, password)
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="text" placeholder="password" name='password' className="input input-bordered" required/>
+          <input type="password" placeholder="password" name='password' className="input input-bordered" required/>
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -92,7 +92,7 @@ signIn(email, password)
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button> <br />
           <button onClick={handleGoogleSignIn} className='btn btn-primary'>login with google</button>
-          <button onClick={githubSignIn} className='btn btn-primary'>login with git hub</button>
+          <button onClick={githubSignIn} className='btn btn-primary mt-4'>login with git hub</button>
         </div>
       </form>
       <p className='ml-5 p-5 text-primary'><small>New to Food World? <Link to="/signup">Creat an account</Link></small></p>
