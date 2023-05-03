@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from './providers/AuthProvider';
+import { Result } from 'postcss';
 
 const Hader = () => {
+const {user, logOut} = useContext(AuthContext)
+
+const handleLogout =() =>{
+
+  logOut()
+  .then(result =>{})
+  .catch(error => console.log(error))
+
+}
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -21,6 +33,7 @@ const Hader = () => {
       <li><Link to="/blog">Blog</Link></li>
       <li><Link to="/login">Login</Link></li>
       <li><Link to="/signup">Sign Up</Link></li>
+      {user && <span>welcome {user.email} <button onClick={handleLogout}>Sign out</button></span>}
     </ul>
   </div>
   <div className="navbar-end">
