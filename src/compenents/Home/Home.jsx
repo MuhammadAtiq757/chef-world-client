@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Chefs from '../chefs/Chefs';
 import Popular from '../popular/Popular';
+import Favourite from '../favourite/Favourite';
 
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
 </div> 
 <Chefs></Chefs>
 <Popular></Popular>
+<Favourite></Favourite>
 
         </div>
     );

@@ -36,9 +36,7 @@ const handleLogout =() =>{
       {user && <span>welcome {user.email} <button onClick={handleLogout}>Sign out</button></span>}
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Get started</a>
-  </div>
+ 
 </div>
         </div>
     );

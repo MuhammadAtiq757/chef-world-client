@@ -12,6 +12,7 @@ import Login from './compenents/Login/Login.jsx';
 import Signup from './compenents/Signup/Signup.jsx';
 import Blog from './compenents/Blog/Blog.jsx';
 import AuthProvider from './compenents/providers/AuthProvider.jsx';
+import Details from './compenents/details/Details.jsx';
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,34 @@ element: <Home></Home>
      {
       path:"blog",
       element:<Blog></Blog>
+     },
+
+
+
+
+
+     {
+      path:"/chefs/:id",
+      element: <Details></Details>,
+      loader:({params})=>
+      fetch(`http://localhost:5000/chef/${params.id}`)
+      
+     },
+
+     
+
+     {
+      path: "*",
+      element: (<div className="text-center text-6xl mt-20 text-purple-500">
+      <div className="card w-full text-center  ">
+        <div className="card-body items-center text-center">
+          <p>Sorry!!</p>
+          
+          <img className="img-fluid" src="https://static.vecteezy.com/system/resources/previews/006/618/492/original/error-404-page-not-found-background-free-vector.jpg" />
+        </div>
+      </div>
+    </div>)
+
      }
     ]
   },
