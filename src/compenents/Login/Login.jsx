@@ -8,7 +8,7 @@ const Login = () => {
   const auth = getAuth(app)
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
-const navigate = useNavigate()
+
   const handleGoogleSignIn = () =>{
     
 signInWithPopup(auth, googleProvider)
@@ -56,7 +56,7 @@ signIn(email, password)
   const loggedUser = result.user;
   console.log(loggedUser);
   form.rest();
-  navigate('/')
+ 
 })
 .catch(error =>{
   console.log(error);
