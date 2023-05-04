@@ -24,7 +24,7 @@ fetch('http://localhost:5000/chef')
             key={che.id}
             >
 
-          <div>
+          <div className=''>
           <div className="card w-96 bg-base-100 shadow-xl">
   <figure><img className='h-64' src={che.image} alt="Shoes" /></figure>
   <div className="card-body">
@@ -34,8 +34,9 @@ fetch('http://localhost:5000/chef')
     <p>Experience: {che.years_of_experience}</p>
    <p>{che.ratings}</p>
    <p>Likes: {che.likes}</p>
+
 <Link to={`/chefs/${che.id}`}> 
-<button className='btn btn-primary'>Details</button>
+<button className='btn btn-primary'>View Recipes</button>
 </Link>
   </div>
 </div>

@@ -4,6 +4,7 @@ import './detailbody.css'
 const Detailsdata = ({detaal}) => {
    const {ingredients, recipe_name,cooking_method,experience, likes,number_of_recipe,recipe_picture
    } = detaal
+   
     return (
         <div className='detailbody'>
            {
