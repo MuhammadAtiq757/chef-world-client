@@ -3,12 +3,13 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
+    
+
 }
 
 .blog-body{
     width: 400px;
     margin: 0 auto;
-    border: 2px solid gray;
-    border-radius: 5px;
     margin: 20px;
+    margin-top: 10px;
 }
