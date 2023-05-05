@@ -1,9 +1,24 @@
-import React from 'react';
-import './Blog.css'
+import React, { Component } from 'react';
+import './Blog.css';
+import { jsPDF } from "jspdf";
+import logo from '../Blog/image/atiq.jpeg'
+
 
 const Blog = () => {
+   const pdfGenerate=()=>{
+        var doc = new jsPDF('landscape', 'px', 'a4', 'false');
+        doc.addImage(logo, "JPEG", 65, 20,500,400)
+        doc.addPage()
+        doc.text(60, 60,'Description')
+        doc.text(100, 60, `This is the blog page there have some importent question with answer. i think 
+        these qustion you should be know for your future. there has four diffrernt question. but these question is very easy`)
+        doc.save('atiq.pdf')
+    }
+
     return (
         <div>
+            <button onClick={pdfGenerate} className='btn btn-outline mt-10 ml-10 p-2 '>Dawnload pdf</button>
+
             <div className="card w-96 bg-base-100 shadow-xl blog-card">
                 <div className="card-body blog-body">
                     <h2 className="card-title">Tell us the differences between uncontrolled
@@ -38,6 +53,7 @@ const Blog = () => {
             </div>
         </div>
     );
+
 };
 
 export default Blog;
