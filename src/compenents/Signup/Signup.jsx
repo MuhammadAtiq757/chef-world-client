@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Signup = () => {
   const [error, setError] = useState('');
@@ -13,6 +14,7 @@ const form = event.target;
 const name = form.name.value;
 const email = form.email.value;
 const password = form.password.value;
+const photo = form.photo.value;
 
 console.log(name, email, password);
 
@@ -25,11 +27,29 @@ createUser(email, password)
 .then(result =>{
   const loggedUser = result.user;
   console.log(loggedUser);
+  updateUserProfile(result.user, name, photo)
 })
 .catch(error =>{
   console.log(error);
   setError(error.message);
 })
+
+
+const updateUserProfile =(user , name , photo)=>{
+  updateProfile( user ,{
+      displayName: name,
+       photoURL: photo 
+  })
+  .then(result => {
+      const updateUser = result.user;
+      console.log(updateUser);
+      setError('');
+  })
+  .catch(error => {
+      setError('');
+  })
+};
+
 
   }
     return (
@@ -64,6 +84,14 @@ createUser(email, password)
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Photo</span>
+          </label>
+          <input type="eamil" placeholder="enter your Photo url" name='photo' className="input input-bordered" required/>
+        </div>
+
         <div className="form-control mt-6">
          <input className='btn btn-primary' type="submit" name="" id=""  value="Sign up" required/>
         </div>

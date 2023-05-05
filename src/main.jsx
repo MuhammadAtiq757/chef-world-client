@@ -13,6 +13,7 @@ import Signup from './compenents/Signup/Signup.jsx';
 import Blog from './compenents/Blog/Blog.jsx';
 import AuthProvider from './compenents/providers/AuthProvider.jsx';
 import Details from './compenents/details/Details.jsx';
+import PrivateRoute from './private/PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -48,9 +49,9 @@ element: <Home></Home>
 
      {
       path:"/chefs/:id",
-      element: <Details></Details>,
+      element: <PrivateRoute><Details></Details></PrivateRoute>,
       loader:({params})=>
-      fetch(`http://localhost:5000/chef/${params.id}`)
+      fetch(`https://classic-project-server-muhammadatiq757.vercel.app/chef/${params.id}`)
       
      },
 

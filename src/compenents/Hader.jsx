@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './providers/AuthProvider';
-import { Result } from 'postcss';
+
 
 const Hader = () => {
 const {user, logOut} = useContext(AuthContext)
@@ -16,7 +16,7 @@ const handleLogout =() =>{
 
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-neutral-300">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,7 +25,7 @@ const handleLogout =() =>{
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">food world</a>
+    <a className="btn btn-ghost normal-case text-2xl">Chef<span className='text-lime-800'> world</span></a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -33,7 +33,13 @@ const handleLogout =() =>{
       <li><Link to="/blog">Blog</Link></li>
       <li><Link to="/login">Login</Link></li>
       <li><Link to="/signup">Sign Up</Link></li>
-      {user && <span>welcome {user.email} <button onClick={handleLogout}>Sign out</button></span>}
+      <div className="w-10 rounded " >
+                        <img src={user?.photoURL} />
+                    </div>
+
+
+
+      {user && <span>  <button onClick={handleLogout}>Sign out</button></span>}
     </ul>
   </div>
  
