@@ -21,16 +21,7 @@ const {image
   </div>
 </div>
 
-         <div>
-         {
-           recipes.map(detaal => <Detailsdata 
-           detaal={detaal}
-           >
-           </Detailsdata>)
-          }
-         </div>
-           
-        </div>
+        
     );
 };
 
